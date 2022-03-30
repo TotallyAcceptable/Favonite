@@ -6,8 +6,14 @@ namespace Favonite_Development
 {
     public class Game1 : Game
     {
+        #region Declarations
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+
+        enum GameStates { TitleScreen, OpeningMenu, Playing, Credits}
+        GameStates gameStates = GameStates.TitleScreen;
+
+        #endregion
 
         public Game1()
         {
