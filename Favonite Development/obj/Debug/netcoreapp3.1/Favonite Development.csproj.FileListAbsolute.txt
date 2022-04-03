@@ -1,0 +1,42 @@
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\PlaceholderPlayer.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.exe
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.deps.json
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.runtimeconfig.json
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.runtimeconfig.dev.json
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.pdb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Microsoft.VisualBasic.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.Direct2D1.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.Direct3D11.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.Direct3D9.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.DXGI.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.Mathematics.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.MediaFoundation.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.XAudio2.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.XInput.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\debian-x64\native\libuv.so
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\fedora-x64\native\libuv.so
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\opensuse-x64\native\libuv.so
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\osx\native\libuv.dylib
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\rhel-x64\native\libuv.so
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\win7-arm\native\libuv.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\libuv.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\libuv.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.csproj.AssemblyReference.cache
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.GeneratedMSBuildEditorConfig.editorconfig
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.AssemblyInfoInputs.cache
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.AssemblyInfo.cs
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.csproj.CoreCompileInputs.cache
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.csproj.CopyComplete
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.dll
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.pdb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.genruntimeconfig.cache
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauDown.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauLeft.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauRight.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauUp.xnb

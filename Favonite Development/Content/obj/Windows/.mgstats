@@ -1,0 +1,6 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/pixil-frame-0.png","E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/bin/Windows/PlaceholderPlayer.xnb","TextureProcessor","Texture2DContent",330,1685,0.1785407
+"E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/utauDown.png","E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/bin/Windows/utauDown.xnb","TextureProcessor","Texture2DContent",2387,24781,0.1783194
+"E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/utauLeft.png","E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/bin/Windows/utauLeft.xnb","TextureProcessor","Texture2DContent",2297,24389,0.0038992
+"E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/utauRight.png","E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/bin/Windows/utauRight.xnb","TextureProcessor","Texture2DContent",2181,24389,0.0041245
+"E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/utauUp.png","E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/bin/Windows/utauUp.xnb","TextureProcessor","Texture2DContent",2468,24277,0.0036618
