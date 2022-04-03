@@ -37,7 +37,7 @@ namespace Favonite_Development
             speed = 0f;
             position = Vector2.Zero;
             velocity = Vector2.Zero;
-            acceleration = new Vector2(1000,0);
+            acceleration = new Vector2(500,0);
             jumpingAcceleration = new Vector2(0, 200);
             friction = 3f;
             windResistance = 0.2f;
@@ -53,12 +53,14 @@ namespace Favonite_Development
 
             if (Controls.IsPressed(Keys.D) == true)
             {
-                velocity = new Vector2(1, 0);
+                
                 // using pythagoras theorem to calculate physics based movement
                 speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y); //scalar representation of velocity
                 normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed); //normalised vector
                 velocity = normalDirection * speed;//velocity
+                System.Diagnostics.Debug.WriteLine(velocity);
                 velocity += acceleration * (float)gameTime.ElapsedGameTime.TotalSeconds; // velocity with acceleration applied
+                System.Diagnostics.Debug.WriteLine(velocity);
                 position.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds; // change in player position
                 Controls.SetState();
                 System.Diagnostics.Debug.WriteLine("FALSE");
@@ -72,12 +74,13 @@ namespace Favonite_Development
             }
             if (Controls.IsPressed(Keys.A) == true)
             {
-                velocity = new Vector2(-1, 0);
+                
                 // using pythagoras theorem to calculate physics based movement
                 speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y); //scalar representation of velocity
                 normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed); //normalised vector
                 velocity = normalDirection * speed;//velocity
                 velocity -= acceleration * (float)gameTime.ElapsedGameTime.TotalSeconds; // velocity with acceleration applied
+                System.Diagnostics.Debug.WriteLine(velocity);
                 position.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds; // change in player position
                 Controls.SetState();
                 System.Diagnostics.Debug.WriteLine("FALSE");
@@ -104,8 +107,8 @@ namespace Favonite_Development
 
             #endregion
 
-            //position.X = MathHelper.Clamp(position.X, 0,Globals.screenWidth - animation.frameWidth);
-            //position.Y = MathHelper.Clamp(position.Y, 0, Globals.screenHeight - animation.frameHeight);
+            position.X = MathHelper.Clamp(position.X, 0,Globals.screenWidth - animation.frameWidth);
+            position.Y = MathHelper.Clamp(position.Y, 0, Globals.screenHeight - animation.frameHeight);
 
             #region Gravity
             velocity.Y += .01f * (Globals.gravity * (float)gameTime.ElapsedGameTime.TotalSeconds);
