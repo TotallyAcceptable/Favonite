@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Favonite_Development
 {
@@ -8,6 +11,7 @@ namespace Favonite_Development
     {
 
         public const float gravity = 9.81f;
+        public static Vector2 Gravity = new Vector2(0, 9.81f);
 
         public const int screenWidth = 600;
         public const int screenHeight = 400;
