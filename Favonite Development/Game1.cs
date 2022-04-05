@@ -8,12 +8,15 @@ namespace Favonite_Development
     {
         #region Declarations
         public GraphicsDeviceManager _graphics;
+        GraphicsDevice details;
         private SpriteBatch _spriteBatch;
         enum GameStates { TitleScreen, OpeningMenu, Playing, Credits }
         GameStates gameStates = GameStates.TitleScreen;
 
         private Player player;
-        Texture2D playerTexture;
+        private EnemyManager enemytype = new EnemyManager();
+        
+        Texture2D playerTexture, enemyTexture;
         float scale = 1f;
 
         #endregion
@@ -44,6 +47,9 @@ namespace Favonite_Development
             playerTexture = Content.Load<Texture2D>("utauDown");
             playerAnimation.Initialize(playerTexture, player.position, 32, 48, 4, 120, Color.White, scale, true);
             player.Initialize(playerAnimation);
+            details = GraphicsDevice;
+            enemyTexture = Content.Load<Texture2D>("PlaceholderPlayer");
+            enemytype.Initialize(enemyTexture, details);
             // TODO: use this.Content to load your game content here
         }
 
@@ -53,6 +59,7 @@ namespace Favonite_Development
                 Exit();
 
             player.Update(gameTime);
+            enemytype.Update(gameTime,player);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -64,6 +71,7 @@ namespace Favonite_Development
 
             _spriteBatch.Begin();
             player.Draw(_spriteBatch);
+            enemytype.Draw(_spriteBatch);
             _spriteBatch.End();
             // TODO: Add your drawing code here
 

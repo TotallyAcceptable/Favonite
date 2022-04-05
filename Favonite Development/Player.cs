@@ -15,8 +15,9 @@ namespace Favonite_Development
         public Vector2 position, velocity, acceleration,jumpingAcceleration, normalDirection;
         private Rectangle sourceRect;
         private float speed, windResistance, friction;
-        private bool isJumping, isHit;
-        private int playerHealth, playerAttack, playerDefence;
+        private bool isJumping;
+        public bool active, isHit;
+        public int playerHealth, playerAttack, playerDefence;
   
 
         public int Width
@@ -29,6 +30,12 @@ namespace Favonite_Development
             get { return animation.frameHeight; }
         }
 
+        private void Velocity()
+        {
+            speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y);
+            normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed);
+            velocity = normalDirection * speed;
+        }
         #endregion
 
         public void Initialize(Animation animation)
@@ -38,11 +45,12 @@ namespace Favonite_Development
             position = Vector2.Zero;
             velocity = Vector2.Zero;
             acceleration = new Vector2(500,0);
-            jumpingAcceleration = new Vector2(0, 200);
+            jumpingAcceleration = new Vector2(0, 2000);
             friction = 3f;
             windResistance = 0.2f;
             sourceRect = new Rectangle(0, 0, 40, 40);
             isJumping = false;
+            playerHealth = 100;
         }
 
         public void Update(GameTime gameTime)
@@ -68,7 +76,7 @@ namespace Favonite_Development
             }
             if (Controls.IsKeyReleased(Keys.D) == true)
             {
-                velocity = Vector2.Zero;
+                velocity.X = 0;
                 System.Diagnostics.Debug.WriteLine("TRUE");
                 Controls.SetState();
             }
@@ -88,7 +96,7 @@ namespace Favonite_Development
             }
             if (Controls.IsKeyReleased(Keys.A) == true)
             {
-                velocity = Vector2.Zero;
+                velocity.X = 0;
                 System.Diagnostics.Debug.WriteLine("TRUE");
                 Controls.SetState();
             }
@@ -96,12 +104,19 @@ namespace Favonite_Development
             {
                 isJumping = true;
                 //fill in
+
+                speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y); //scalar representation of velocity
+                normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed); //normalised vector
+                velocity = normalDirection * speed;//velocity
+                velocity -= jumpingAcceleration * (float)gameTime.ElapsedGameTime.TotalSeconds; // velocity with acceleration applied
+                System.Diagnostics.Debug.WriteLine(velocity);
+                position.Y += velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
                 Controls.SetState();
             }
             if (Controls.IsKeyReleased(Keys.Space) == true && isJumping == true)
             {
-                isJumping = false;
-                
+                isJumping = false;  
                 Controls.SetState();
             }
 
@@ -112,15 +127,10 @@ namespace Favonite_Development
 
             #region Gravity
             velocity.Y += .01f * (Globals.gravity * (float)gameTime.ElapsedGameTime.TotalSeconds);
-            position.Y += MathHelper.Clamp(velocity.Y, 0, 10);
+            position.Y += MathHelper.Clamp(velocity.Y, 0, 60);
             #endregion
 
             #region collision
-            if (boundingRectangle.Intersects(sourceRect)) //placeholderrr
-            {
-                isHit = true;
-                System.Diagnostics.Debug.WriteLine("Player Hit");
-            }
 
             #endregion
 
@@ -135,12 +145,7 @@ namespace Favonite_Development
             animation.Draw(spriteBatch);
         }
 
-        private void Velocity()
-        {
-            speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y);
-            normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed);
-            velocity = normalDirection * speed;
-        }
+
 
     }
 }

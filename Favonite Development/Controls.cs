@@ -11,11 +11,19 @@ namespace Favonite_Development
     {
         public static KeyboardState currentKeyboardState;
         public static KeyboardState oldKeyboardState;
+        public static GamePadState currentGamePadState;
+        public static GamePadState oldGamePadState;
 
         public static KeyboardState GetState()
         {
             currentKeyboardState = Keyboard.GetState();
             return currentKeyboardState;
+        }
+
+        public static GamePadState GetGamepadState()
+        {
+            currentGamePadState = GamePad.GetState(PlayerIndex.One);
+            return currentGamePadState;
         }
 
         public static bool IsPressed(Keys keys)
@@ -31,6 +39,11 @@ namespace Favonite_Development
         public static void SetState()
         {
             oldKeyboardState = currentKeyboardState;
+        }
+
+        public static void SetGamepadState()
+        {
+            oldGamePadState = currentGamePadState;
         }
 
 
