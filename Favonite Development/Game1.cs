@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Favonite_Development.States;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -13,6 +14,9 @@ namespace Favonite_Development
         enum GameStates { TitleScreen, OpeningMenu, Playing, Credits }
         GameStates gameStates = GameStates.TitleScreen;
 
+        private State _currentState;
+        private State _nextState;
+
         private Player player;
         private EnemyManager enemytype = new EnemyManager();
         
@@ -20,6 +24,11 @@ namespace Favonite_Development
         float scale = 1f;
 
         #endregion
+
+        public void ChangeState(State state)
+        {
+            _nextState = state;
+        }
 
         public Game1()
         {
@@ -33,8 +42,10 @@ namespace Favonite_Development
             // TODO: Add your initialization logic here
              player = new Player();
 
+            
             _graphics.PreferredBackBufferWidth = Globals.screenWidth;
             _graphics.PreferredBackBufferHeight = Globals.screenHeight;
+            _graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -42,6 +53,10 @@ namespace Favonite_Development
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            _currentState = new MenuState(this, _graphics.GraphicsDevice, Content);
+            _currentState.LoadContent();
+            _nextState = null;
 
             Animation playerAnimation = new Animation();
             playerTexture = Content.Load<Texture2D>("utauDown");
@@ -55,9 +70,21 @@ namespace Favonite_Development
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Controls.GetState().IsKeyDown(Keys.Escape))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || PlayerInputs.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            {
+                if (_nextState != null)
+                {
+                    _currentState = _nextState;
+                    _currentState.LoadContent();
 
+                    _nextState = null;
+                }
+
+                _currentState.Update(gameTime);
+                _currentState.PostUpdate(gameTime);
+            }
+           
             player.Update(gameTime);
             enemytype.Update(gameTime,player);
             // TODO: Add your update logic here
@@ -65,11 +92,17 @@ namespace Favonite_Development
             base.Update(gameTime);
         }
 
+
+
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            _currentState.Draw(gameTime, _spriteBatch);
+
             _spriteBatch.Begin();
+
+            
             player.Draw(_spriteBatch);
             enemytype.Draw(_spriteBatch);
             _spriteBatch.End();

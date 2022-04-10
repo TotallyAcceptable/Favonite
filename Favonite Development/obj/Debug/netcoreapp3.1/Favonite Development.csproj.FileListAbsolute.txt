@@ -40,3 +40,10 @@ E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\ne
 E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauLeft.xnb
 E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauRight.xnb
 E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauUp.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Controls.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Exit Game.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\FavoniteIcon.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Main Menu Background.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Settings.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Start Game.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Title name.xnb
