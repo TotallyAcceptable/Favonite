@@ -4,18 +4,18 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/Controls.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/Exit Game.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/FavoniteIcon.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/Main Menu Background.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/pixil-frame-0.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/Settings.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/Start Game.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/Title name.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/utauDown.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/utauLeft.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/utauRight.png</File>
-    <File>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/utauUp.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/Controls.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/Exit Game.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/FavoniteIcon.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/Main Menu Background.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/pixil-frame-0.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/Settings.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/Start Game.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/Title name.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/utauDown.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/utauLeft.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/utauRight.png</File>
+    <File>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/utauUp.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

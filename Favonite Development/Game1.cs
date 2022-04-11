@@ -16,13 +16,6 @@ namespace Favonite_Development
 
         private State _currentState;
         private State _nextState;
-
-        private Player player;
-        private EnemyManager enemytype = new EnemyManager();
-        
-        Texture2D playerTexture, enemyTexture;
-        float scale = 1f;
-
         #endregion
 
         public void ChangeState(State state)
@@ -38,14 +31,12 @@ namespace Favonite_Development
         }
 
         protected override void Initialize()
-        {
-            // TODO: Add your initialization logic here
-             player = new Player();
-
-            
+        {   
             _graphics.PreferredBackBufferWidth = Globals.screenWidth;
             _graphics.PreferredBackBufferHeight = Globals.screenHeight;
             _graphics.ApplyChanges();
+
+            
 
             base.Initialize();
         }
@@ -54,18 +45,16 @@ namespace Favonite_Development
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            _currentState = new MenuState(this, _graphics.GraphicsDevice, Content);
+            _currentState = new MenuState(this, _graphics.GraphicsDevice, Content, _spriteBatch);
             _currentState.LoadContent();
             _nextState = null;
-
-            Animation playerAnimation = new Animation();
-            playerTexture = Content.Load<Texture2D>("utauDown");
-            playerAnimation.Initialize(playerTexture, player.position, 32, 48, 4, 120, Color.White, scale, true);
-            player.Initialize(playerAnimation);
-            details = GraphicsDevice;
-            enemyTexture = Content.Load<Texture2D>("PlaceholderPlayer");
-            enemytype.Initialize(enemyTexture, details);
             // TODO: use this.Content to load your game content here
+        }
+
+        protected override void UnloadContent()
+        {
+
+            base.UnloadContent();
         }
 
         protected override void Update(GameTime gameTime)
@@ -85,8 +74,7 @@ namespace Favonite_Development
                 _currentState.PostUpdate(gameTime);
             }
            
-            player.Update(gameTime);
-            enemytype.Update(gameTime,player);
+
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -100,12 +88,6 @@ namespace Favonite_Development
 
             _currentState.Draw(gameTime, _spriteBatch);
 
-            _spriteBatch.Begin();
-
-            
-            player.Draw(_spriteBatch);
-            enemytype.Draw(_spriteBatch);
-            _spriteBatch.End();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

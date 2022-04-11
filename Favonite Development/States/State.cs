@@ -15,13 +15,14 @@ namespace Favonite_Development.States
         protected ContentManager _content;
         protected GraphicsDevice _graphicsDevice;
 
-        public State(Game1 game, GraphicsDevice graphicsDevice,ContentManager content)
+        public State(Game1 game, GraphicsDevice graphicsDevice,ContentManager content, SpriteBatch spriteBatch)
         {
             _game = game;
             _content = content;
             _graphicsDevice = graphicsDevice;
         }
 
+        public abstract void Initialize();
         public abstract void LoadContent();
 
 

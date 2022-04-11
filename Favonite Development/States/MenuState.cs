@@ -16,11 +16,15 @@ namespace Favonite_Development.States
     {
         private List<Component> _components;
         private Texture2D menuBackgroundTexture, icon, titleName;
+        private SpriteBatch _spriteBatch;
 
 
 
-        public MenuState(Game1 game, GraphicsDevice graphicsDevice,ContentManager content) : base(game,graphicsDevice,content)
+
+        public MenuState(Game1 game, GraphicsDevice graphicsDevice,ContentManager content, SpriteBatch spriteBatch) : base(game,graphicsDevice,content , spriteBatch)
         {
+            _spriteBatch = spriteBatch;
+
             var buttonTexture = _content.Load<Texture2D>("Start Game");
 
             var newGameButton = new Button(buttonTexture)
@@ -56,6 +60,10 @@ namespace Favonite_Development.States
 
         }
 
+        public override void Initialize()
+        {
+
+        }
         public override void LoadContent()
         {
             var buttonTexture = _content.Load<Texture2D>("Start Game");
@@ -95,7 +103,7 @@ namespace Favonite_Development.States
         }
         private void NewGameButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
+            _game.ChangeState(new GameState(_game, _graphicsDevice, _content, _spriteBatch));
         }
         private void QuitGameButton_Click(object sender, EventArgs e)
         {
