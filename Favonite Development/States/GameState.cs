@@ -8,6 +8,7 @@ using System.Linq;
 using Microsoft.Xna.Framework.Content;
 using Favonite_Development.Controls;
 using System.ComponentModel;
+using Favonite_Development.Core;
 
 namespace Favonite_Development.States
 {
@@ -16,9 +17,11 @@ namespace Favonite_Development.States
         private ContentManager _content;
         private GraphicsDevice _details;
         private SpriteBatch _spriteBatch;
-        private Player player = new Player();
+        private Camera _camera = new Camera();
+
         private EnemyManager enemytype = new EnemyManager();
         Texture2D playerTexture, enemyTexture;
+        private Player player;
         float scale = 1f;
 
         public GameState(Game1 game, GraphicsDevice graphicsDevice,ContentManager content, SpriteBatch spriteBatch) : base(game, graphicsDevice,content, spriteBatch)
@@ -26,17 +29,20 @@ namespace Favonite_Development.States
             _content = content;
             _details = graphicsDevice;
             _spriteBatch = spriteBatch;
+            player = new Player(_content.Load<Texture2D>("utauDown"));
 
         }
 
         public override void Initialize()
         {
-            player = new Player();
+            
         }
 
 
         public override void LoadContent()
         {
+
+
             Animation playerAnimation = new Animation();
             playerTexture = _content.Load<Texture2D>("utauDown");
             playerAnimation.Initialize(playerTexture, player.position, 32, 48, 4, 120, Color.White, scale, true);
@@ -47,6 +53,7 @@ namespace Favonite_Development.States
 
         public override void Update(GameTime gameTime)
         {
+            _camera.Follow(player);
             player.Update(gameTime);
             enemytype.Update(gameTime, player);
         }
@@ -57,8 +64,7 @@ namespace Favonite_Development.States
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-
-            _spriteBatch.Begin();
+            _spriteBatch.Begin(transformMatrix: _camera.Transform);
             player.Draw(_spriteBatch);
             enemytype.Draw(_spriteBatch);
             _spriteBatch.End();

@@ -18,9 +18,6 @@ namespace Favonite_Development.States
         private Texture2D menuBackgroundTexture, icon, titleName;
         private SpriteBatch _spriteBatch;
 
-
-
-
         public MenuState(Game1 game, GraphicsDevice graphicsDevice,ContentManager content, SpriteBatch spriteBatch) : base(game,graphicsDevice,content , spriteBatch)
         {
             _spriteBatch = spriteBatch;

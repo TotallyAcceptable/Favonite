@@ -36,15 +36,12 @@ namespace Favonite_Development
             _graphics.PreferredBackBufferHeight = Globals.screenHeight;
             _graphics.ApplyChanges();
 
-            
-
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
             _currentState = new MenuState(this, _graphics.GraphicsDevice, Content, _spriteBatch);
             _currentState.LoadContent();
             _nextState = null;
@@ -62,6 +59,8 @@ namespace Favonite_Development
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || PlayerInputs.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             {
+
+// this code block changes the games states.
                 if (_nextState != null)
                 {
                     _currentState = _nextState;
@@ -80,12 +79,11 @@ namespace Favonite_Development
             base.Update(gameTime);
         }
 
-
-
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+// draws the current state of the game
             _currentState.Draw(gameTime, _spriteBatch);
 
             // TODO: Add your drawing code here

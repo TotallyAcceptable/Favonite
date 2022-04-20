@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Favonite_Development
 {
-    class Animation
+    public class Animation
     {
         #region Declarations
         Texture2D spriteStrip;

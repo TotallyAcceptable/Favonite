@@ -4,18 +4,19 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Favonite_Development.Sprites;
 
 namespace Favonite_Development
 {
-    class Player
+    public class Player : Sprite
     {
         #region Declarations
-
+        
         private Animation animation;
         public Vector2 position, velocity, acceleration,jumpingAcceleration, normalDirection;
-        private Rectangle sourceRect;
+        private Rectangle sourceRect,boundingRectangle;
         private float speed, windResistance, friction;
-        private bool isJumping;
+        private bool _Jumping , _onGround;
         public bool active, isHit;
         public int playerHealth, playerAttack, playerDefence;
   
@@ -30,12 +31,17 @@ namespace Favonite_Development
             get { return animation.frameHeight; }
         }
 
+        public Player(Texture2D texture) : base(texture)
+        {
+
+        }
         private void Velocity()
         {
             speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y);
             normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed);
             velocity = normalDirection * speed;
         }
+
         #endregion
 
         public void Initialize(Animation animation)
@@ -49,8 +55,10 @@ namespace Favonite_Development
             friction = 3f;
             windResistance = 0.2f;
             sourceRect = new Rectangle(0, 0, 40, 40);
-            isJumping = false;
+            _Jumping = false;
             playerHealth = 100;
+            boundingRectangle = Rectangle.Empty;
+            _onGround = true;
         }
 
         public void Update(GameTime gameTime)
@@ -100,23 +108,24 @@ namespace Favonite_Development
                 System.Diagnostics.Debug.WriteLine("TRUE");
                 PlayerInputs.SetState();
             }
-            if (PlayerInputs.IsPressed(Keys.Space) == true && isJumping == false)
+            if (PlayerInputs.IsPressed(Keys.Space) == true && _Jumping == false)
             {
-                isJumping = true;
+                _Jumping = true;
                 //fill in
-
-                speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y); //scalar representation of velocity
-                normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed); //normalised vector
-                velocity = normalDirection * speed;//velocity
-                velocity -= jumpingAcceleration * (float)gameTime.ElapsedGameTime.TotalSeconds; // velocity with acceleration applied
-                System.Diagnostics.Debug.WriteLine(velocity);
-                position.Y += velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                if (!_onGround)
+                    velocity.Y += 0.2f;
+                if (_onGround && _Jumping)
+                {
+                    velocity.Y = -5f;
+                    System.Diagnostics.Debug.WriteLine("_Jumping");
+                }
+                    
 
                 PlayerInputs.SetState();
             }
-            if (PlayerInputs.IsKeyReleased(Keys.Space) == true && isJumping == true)
+            if (PlayerInputs.IsKeyReleased(Keys.Space) == true && _Jumping == true)
             {
-                isJumping = false;  
+                _Jumping = false;  
                 PlayerInputs.SetState();
             }
 
@@ -138,6 +147,11 @@ namespace Favonite_Development
             animation.position = position;
             animation.Update(gameTime);
             #endregion
+
+            if(playerHealth == 0)
+            {
+                active = false;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
