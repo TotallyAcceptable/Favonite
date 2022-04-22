@@ -36,19 +36,20 @@ namespace Favonite_Development.States
 
         public override void Initialize()
         {
-            map = new Map();
+
         }
 
 
         public override void LoadContent()
         {
+            map = new Map();
             Tiles.Content = _content;
             map.Generate(new int[,]{
                 { 0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-                { 0,0,0,0,0,0,3,0,0,2,0,0,0,0,0,0 },
-                { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-                { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-                { 0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1 },
+                { 0,0,0,0,0,3,3,0,0,2,0,0,0,0,0,0 },
+                { 0,0,0,0,2,2,2,2,2,0,0,0,0,0,0,0 },
+                { 0,0,0,3,0,3,3,3,3,0,0,0,0,0,0,0 },
+                { 0,0,2,2,0,0,2,0,0,0,1,1,1,1,1,1 },
                 { 1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0 },
                 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
             },64);
@@ -69,6 +70,8 @@ namespace Favonite_Development.States
         {
             _camera.Follow(player);
             player.Update(gameTime);
+            foreach (CollisionTiles tiles in map.CollisionTiles)
+                player.Collision(tiles.Rectangle, map.Width, map.Height);
             enemytype.Update(gameTime, player);
 
         }

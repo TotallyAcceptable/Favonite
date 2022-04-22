@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Favonite_Development.Sprites;
+using Favonite_Development.Core;
 
 namespace Favonite_Development
 {
@@ -29,6 +30,11 @@ namespace Favonite_Development
         public int Height
         {
             get { return animation.frameHeight; }
+        }
+
+        public Vector2 Position
+        {
+            get { return position; }
         }
 
         public Player(Texture2D texture) : base(texture)
@@ -63,77 +69,14 @@ namespace Favonite_Development
 
         public void Update(GameTime gameTime)
         {
+            position += velocity;
             Rectangle boundingRectangle = new Rectangle((int)position.X, (int)position.Y, animation.frameWidth, animation.frameHeight);
             PlayerInputs.GetState();
-            #region Keys
+            Input(gameTime);
 
-            if (PlayerInputs.IsPressed(Keys.D) == true)
-            {
-                
-                // using pythagoras theorem to calculate physics based movement
-                speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y); //scalar representation of velocity
-                normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed); //normalised vector
-                velocity = normalDirection * speed;//velocity
-                System.Diagnostics.Debug.WriteLine(velocity);
-                velocity += acceleration * (float)gameTime.ElapsedGameTime.TotalSeconds; // velocity with acceleration applied
-                System.Diagnostics.Debug.WriteLine(velocity);
-                position.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds; // change in player position
-                PlayerInputs.SetState();
-                System.Diagnostics.Debug.WriteLine("FALSE");
-
-            }
-            if (PlayerInputs.IsKeyReleased(Keys.D) == true)
-            {
-                velocity.X = 0;
-                System.Diagnostics.Debug.WriteLine("TRUE");
-                PlayerInputs.SetState();
-            }
-            if (PlayerInputs.IsPressed(Keys.A) == true)
-            {
-                
-                // using pythagoras theorem to calculate physics based movement
-                speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y); //scalar representation of velocity
-                normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed); //normalised vector
-                velocity = normalDirection * speed;//velocity
-                velocity -= acceleration * (float)gameTime.ElapsedGameTime.TotalSeconds; // velocity with acceleration applied
-                System.Diagnostics.Debug.WriteLine(velocity);
-                position.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds; // change in player position
-                PlayerInputs.SetState();
-                System.Diagnostics.Debug.WriteLine("FALSE");
-
-            }
-            if (PlayerInputs.IsKeyReleased(Keys.A) == true)
-            {
-                velocity.X = 0;
-                System.Diagnostics.Debug.WriteLine("TRUE");
-                PlayerInputs.SetState();
-            }
-            if (PlayerInputs.IsPressed(Keys.Space) == true && _Jumping == false)
-            {
-                _Jumping = true;
-                //fill in
-                if (!_onGround)
-                    velocity.Y += 0.2f;
-                if (_onGround && _Jumping)
-                {
-                    velocity.Y = -5f;
-                    System.Diagnostics.Debug.WriteLine("_Jumping");
-                }
-                    
-
-                PlayerInputs.SetState();
-            }
-            if (PlayerInputs.IsKeyReleased(Keys.Space) == true && _Jumping == true)
-            {
-                _Jumping = false;  
-                PlayerInputs.SetState();
-            }
-
-            #endregion
-
-            position.X = MathHelper.Clamp(position.X, 0,Globals.screenWidth - animation.frameWidth);
-            position.Y = MathHelper.Clamp(position.Y, 0, Globals.screenHeight - animation.frameHeight);
-
+            if (velocity.Y < 10)
+                velocity.Y += 0.4f;
+            
             #region Gravity
             velocity.Y += .01f * (Globals.gravity * (float)gameTime.ElapsedGameTime.TotalSeconds);
             position.Y += MathHelper.Clamp(velocity.Y, 0, 60);
@@ -154,11 +97,130 @@ namespace Favonite_Development
             }
         }
 
+        private void Input(GameTime gameTime)
+        {
+            PlayerInputs.GetState();
+
+            if(PlayerInputs.IsPressed(Keys.D))
+            {
+                velocity.X = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+            }
+            else if (PlayerInputs.IsPressed(Keys.A))
+            {
+                velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+            }
+            else if (PlayerInputs.IsPressed(Keys.Space) == true && _Jumping == false)
+            {
+                position.Y -= +5f;
+                velocity.Y = -9f;
+                _Jumping = true;
+            }
+        }
+
+        public void Collision(Rectangle newRectangle, int xOffset, int yOffset)
+        {
+            if (boundingRectangle.TouchTopOf(newRectangle)){
+                boundingRectangle.Y = newRectangle.Y - boundingRectangle.Height;
+                velocity.Y = 0f;
+                _Jumping = false;
+            }
+            if (boundingRectangle.TouchLeftOf(newRectangle))
+            {
+                position.X = newRectangle.X - boundingRectangle.Width - 2;
+            }
+            if (boundingRectangle.TouchRightOf(newRectangle))
+            {
+                position.X = newRectangle.X + boundingRectangle.Width + 2;
+            }
+            if (boundingRectangle.TouchTopOf(newRectangle))
+            {
+                velocity.Y = 1f;
+            }
+
+            position.X = MathHelper.Clamp(position.X, 0, Globals.screenWidth - animation.frameWidth);
+            position.Y = MathHelper.Clamp(position.Y, 0, Globals.screenHeight - animation.frameHeight);
+        }
+        
         public void Draw(SpriteBatch spriteBatch)
         {
             animation.Draw(spriteBatch);
         }
 
+        private void temp()
+        {
+            #region Keys
+
+            if (PlayerInputs.IsPressed(Keys.D) == true)
+            {
+
+                #region 1stmovementimplementation
+                /*
+                // using pythagoras theorem to calculate physics based movement
+                speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y); //scalar representation of velocity
+                normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed); //normalised vector
+                velocity = normalDirection * speed;//velocity
+                System.Diagnostics.Debug.WriteLine(velocity);
+                velocity += acceleration * (float)gameTime.ElapsedGameTime.TotalSeconds; // velocity with acceleration applied
+                System.Diagnostics.Debug.WriteLine(velocity);
+                position.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds; // change in player position
+                PlayerInputs.SetState();
+                System.Diagnostics.Debug.WriteLine("FALSE");
+                */
+                #endregion
+
+            }
+            if (PlayerInputs.IsKeyReleased(Keys.D) == true)
+            {
+                velocity.X = 0;
+                System.Diagnostics.Debug.WriteLine("TRUE");
+                PlayerInputs.SetState();
+            }
+            if (PlayerInputs.IsPressed(Keys.A) == true)
+            {
+                #region 1stmovementimplementation
+                /*
+                // using pythagoras theorem to calculate physics based movement
+                speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y); //scalar representation of velocity
+                normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed); //normalised vector
+                velocity = normalDirection * speed;//velocity
+                velocity -= acceleration * (float)gameTime.ElapsedGameTime.TotalSeconds; // velocity with acceleration applied
+                System.Diagnostics.Debug.WriteLine(velocity);
+                position.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds; // change in player position
+                PlayerInputs.SetState();
+                System.Diagnostics.Debug.WriteLine("FALSE");
+                */
+                #endregion
+
+            }
+            if (PlayerInputs.IsKeyReleased(Keys.A) == true)
+            {
+                velocity.X = 0;
+                System.Diagnostics.Debug.WriteLine("TRUE");
+                PlayerInputs.SetState();
+            }
+            if (PlayerInputs.IsPressed(Keys.Space) == true && _Jumping == false)
+            {
+                _Jumping = true;
+                //fill in
+                if (!_onGround)
+                    velocity.Y += 0.2f;
+                if (_onGround && _Jumping)
+                {
+                    velocity.Y = -5f;
+                    System.Diagnostics.Debug.WriteLine("_Jumping");
+                }
+
+
+                PlayerInputs.SetState();
+            }
+            if (PlayerInputs.IsKeyReleased(Keys.Space) == true && _Jumping == true)
+            {
+                _Jumping = false;
+                PlayerInputs.SetState();
+            }
+
+            #endregion
+        }
 
 
     }

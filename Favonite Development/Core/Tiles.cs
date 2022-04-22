@@ -39,7 +39,7 @@ namespace Favonite_Development.Core
     {
         public CollisionTiles(int i, Rectangle newRectangle)
         {
-            texture = Content.Load<Texture2D>("Tile" + i);
+            texture = Content.Load<Texture2D>("TileMapTiles/Tile" + i);
             this.Rectangle = newRectangle;
         }
 

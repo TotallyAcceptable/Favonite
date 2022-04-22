@@ -96,3 +96,6 @@ C:\Users\todds\Downloads\Leilani's stuff temporarily in here  OwO\Favonite\Favon
 C:\Users\todds\Downloads\Leilani's stuff temporarily in here  OwO\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.pdb
 C:\Users\todds\Downloads\Leilani's stuff temporarily in here  OwO\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.genruntimeconfig.cache
 E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\MainMenuBackground.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\TileMapTiles\Tile1.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\TileMapTiles\Tile2.xnb
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\TileMapTiles\Tile3.xnb
