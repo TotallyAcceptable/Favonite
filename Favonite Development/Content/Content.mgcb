@@ -59,7 +59,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Main Menu Background.png
+/build:Main Menu Background.png;MainMenuBackground.png
 
 #begin pixil-frame-0.png
 /importer:TextureImporter

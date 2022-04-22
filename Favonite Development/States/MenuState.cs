@@ -70,6 +70,11 @@ namespace Favonite_Development.States
 
         }
 
+        public override void UnloadContent()
+        {
+           
+        }
+
 
         public override void Update(GameTime gameTime)
         {

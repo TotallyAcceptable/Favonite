@@ -95,3 +95,4 @@ C:\Users\todds\Downloads\Leilani's stuff temporarily in here  OwO\Favonite\Favon
 C:\Users\todds\Downloads\Leilani's stuff temporarily in here  OwO\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.dll
 C:\Users\todds\Downloads\Leilani's stuff temporarily in here  OwO\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.pdb
 C:\Users\todds\Downloads\Leilani's stuff temporarily in here  OwO\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.genruntimeconfig.cache
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\MainMenuBackground.xnb

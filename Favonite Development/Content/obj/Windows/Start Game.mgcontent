@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/Start Game.png</SourceFile>
-  <SourceTime>2022-04-11T15:26:23.0702751+01:00</SourceTime>
-  <DestFile>C:/Users/todds/Downloads/Leilani's stuff temporarily in here  OwO/Favonite/Favonite Development/Content/bin/Windows/Start Game.xnb</DestFile>
-  <DestTime>2022-04-11T15:36:02.0532185+01:00</DestTime>
+  <SourceFile>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/Start Game.png</SourceFile>
+  <SourceTime>2022-04-09T13:03:41.0647691+01:00</SourceTime>
+  <DestFile>E:/Uni Work/Games Development Project/Favonite/Favonite Development/Content/bin/Windows/Start Game.xnb</DestFile>
+  <DestTime>2022-04-22T15:29:28.0557605+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T17:17:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
