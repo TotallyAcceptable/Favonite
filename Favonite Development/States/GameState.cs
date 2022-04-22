@@ -14,7 +14,7 @@ namespace Favonite_Development.States
 {
     class GameState : State
     {
-        Map map;
+        private Map map;
         private ContentManager _content;
         private GraphicsDevice _details;
         private SpriteBatch _spriteBatch;
@@ -36,16 +36,22 @@ namespace Favonite_Development.States
 
         public override void Initialize()
         {
-            
+            map = new Map();
         }
 
 
         public override void LoadContent()
         {
-            XmlManager<Map> mapLoader = new XmlManager<Map>();
-            map = mapLoader.Load("Favonite Development/Content/Load/Map1.xml");
-            map.LoadContent();
-
+            Tiles.Content = _content;
+            map.Generate(new int[,]{
+                { 0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+                { 0,0,0,0,0,0,3,0,0,2,0,0,0,0,0,0 },
+                { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+                { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+                { 0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1 },
+                { 1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0 },
+                { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+            },64);
             Animation playerAnimation = new Animation();
             playerTexture = _content.Load<Texture2D>("utauDown");
             playerAnimation.Initialize(playerTexture, player.position, 32, 48, 4, 120, Color.White, scale, true);
@@ -55,7 +61,7 @@ namespace Favonite_Development.States
         }
 
         public override void UnloadContent() {
-            map.UnloadContent();
+
         }
 
 
@@ -64,7 +70,7 @@ namespace Favonite_Development.States
             _camera.Follow(player);
             player.Update(gameTime);
             enemytype.Update(gameTime, player);
-            map.Update(gameTime);
+
         }
         public override void PostUpdate(GameTime gameTime)
         {
@@ -74,7 +80,7 @@ namespace Favonite_Development.States
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             _spriteBatch.Begin(transformMatrix: _camera.Transform); //localise view via camera
-            map.Draw(spriteBatch);
+            map.Draw(_spriteBatch);
             player.Draw(_spriteBatch);
             enemytype.Draw(_spriteBatch);
             _spriteBatch.End();

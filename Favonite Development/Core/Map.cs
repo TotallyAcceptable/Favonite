@@ -1,46 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Input;
 
 namespace Favonite_Development.Core
 {
-    public class Map
-    {   [XmlElement("Layer")]
-        public List<Layer> layer;
-        public Vector2 tileDimentions;
+    class Map
+    {
+        private List<CollisionTiles> collisionTiles = new List<CollisionTiles>();
+
+        public List<CollisionTiles> CollisionTiles
+        {
+            get { return collisionTiles; }
+           
+        }
+
+        private int width, height;
+        public int Width
+        {
+            get { return width; }
+        }
+
+        public int Height
+        {
+            get { return height; }
+        }
 
         public Map()
         {
-            layer = new List<Layer>();
-            tileDimentions = Vector2.Zero;
+
         }
-        public void LoadContent()
+
+        public void Generate(int[,] map, int size)
         {
-            foreach(Layer l in layer)
-                l.LoadContent(tileDimentions);
-            
+            for(int x = 0; x<map.GetLength(1); x++)
+                for(int y = 0; y<map.GetLength(0); y++)
+                {
+                    int number = map[y, x];
 
+                    if (number > 0)
+                        collisionTiles.Add(new CollisionTiles(number, new Rectangle(x * size, y * size, width * size, height * size)));
+
+                    width = (x + 1) * size;
+                    height = (y + 1) * size;
+                }
         }
 
-        public void UnloadContent() {
-            foreach (Layer l in layer)
-                l.UnloadContent();
-                
-                    
-        }
-
-        public void Update(GameTime gameTime) {
-            foreach (Layer l in layer)
-                l.Update(gameTime);
-        }
-
-        public void Draw(SpriteBatch spriteBatch) {
-            foreach (Layer l in layer)
-                l.Draw(spriteBatch);
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            foreach (CollisionTiles tile in collisionTiles)
+                tile.Draw(spriteBatch);
         }
     }
 }
