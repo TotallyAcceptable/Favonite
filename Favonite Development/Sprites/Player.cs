@@ -15,8 +15,8 @@ namespace Favonite_Development
         
         private Animation animation;
         public Vector2 position, velocity, acceleration,jumpingAcceleration, normalDirection;
-        private Rectangle sourceRect,boundingRectangle;
-        private float speed, windResistance, friction;
+        private Rectangle boundingRectangle;
+        private float speed;
         private bool _Jumping , _onGround;
         public bool active, isHit;
         public int playerHealth, playerAttack, playerDefence;
@@ -58,9 +58,6 @@ namespace Favonite_Development
             velocity = Vector2.Zero;
             acceleration = new Vector2(500,0);
             jumpingAcceleration = new Vector2(0, 2000);
-            friction = 3f;
-            windResistance = 0.2f;
-            sourceRect = new Rectangle(0, 0, 40, 40);
             _Jumping = false;
             playerHealth = 100;
             boundingRectangle = Rectangle.Empty;
@@ -70,23 +67,24 @@ namespace Favonite_Development
         public void Update(GameTime gameTime)
         {
             position += velocity;
-            Rectangle boundingRectangle = new Rectangle((int)position.X, (int)position.Y, animation.frameWidth, animation.frameHeight);
+            //Rectangle boundingRectangle = new Rectangle((int)position.X, (int)position.Y, animation.frameWidth, animation.frameHeight);
             PlayerInputs.GetState();
             Input(gameTime);
-           
-
-            if (velocity.Y < 10)
-                velocity.Y += 0.4f;
-            
-            #region Gravity
-            velocity.Y += .01f * (Globals.gravity * (float)gameTime.ElapsedGameTime.TotalSeconds);
-            position.Y += MathHelper.Clamp(velocity.Y, 0, 60);
-            #endregion
 
             #region animation
             animation.position = position;
             animation.Update(gameTime);
             #endregion
+
+
+            if (velocity.Y < 10)
+                velocity.Y += 0.4f;
+            
+            #region Gravity
+            //velocity.Y += .01f * (Globals.gravity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+           // position.Y += MathHelper.Clamp(velocity.Y, 0, 60);
+            #endregion
+
 
             if(playerHealth == 0)
             {
@@ -129,6 +127,8 @@ namespace Favonite_Development
 
         public void Collision(Rectangle newRectangle, int xOffset, int yOffset)
         {
+            Rectangle boundingRectangle = new Rectangle((int)position.X, (int)position.Y, animation.frameWidth, animation.frameHeight);
+
             if (boundingRectangle.TouchTopOf(newRectangle)){
                 boundingRectangle.Y = newRectangle.Y - boundingRectangle.Height;
                 velocity.Y = 0f;
@@ -142,7 +142,7 @@ namespace Favonite_Development
             {
                 position.X = newRectangle.X + boundingRectangle.Width + 2;
             }
-            if (boundingRectangle.TouchTopOf(newRectangle))
+            if (boundingRectangle.TouchBottomOf(newRectangle))
             {
                 velocity.Y = 1f;
             }
