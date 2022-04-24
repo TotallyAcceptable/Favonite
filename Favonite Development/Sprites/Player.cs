@@ -82,10 +82,6 @@ namespace Favonite_Development
             position.Y += MathHelper.Clamp(velocity.Y, 0, 60);
             #endregion
 
-            #region collision
-
-            #endregion
-
             #region animation
             animation.position = position;
             animation.Update(gameTime);
