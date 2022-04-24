@@ -41,7 +41,7 @@ namespace Favonite_Development.Core
                     int number = map[y, x];
 
                     if (number > 0)
-                        collisionTiles.Add(new CollisionTiles(number, new Rectangle(x * size, y * size, width * size, height * size)));
+                        collisionTiles.Add(new CollisionTiles(number, new Rectangle(x * size, y * size, size, size)));
 
                     width = (x + 1) * size;
                     height = (y + 1) * size;

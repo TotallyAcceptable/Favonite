@@ -73,6 +73,7 @@ namespace Favonite_Development
             Rectangle boundingRectangle = new Rectangle((int)position.X, (int)position.Y, animation.frameWidth, animation.frameHeight);
             PlayerInputs.GetState();
             Input(gameTime);
+           
 
             if (velocity.Y < 10)
                 velocity.Y += 0.4f;
@@ -97,19 +98,32 @@ namespace Favonite_Development
         {
             PlayerInputs.GetState();
 
-            if(PlayerInputs.IsPressed(Keys.D))
+            if(PlayerInputs.IsPressed(Keys.D) == true)
             {
                 velocity.X = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+                PlayerInputs.SetState();
             }
-            else if (PlayerInputs.IsPressed(Keys.A))
+            else if (PlayerInputs.IsKeyReleased(Keys.D) == true)
+            {
+                velocity.X = 0;
+                PlayerInputs.SetState();
+            }
+            else if (PlayerInputs.IsPressed(Keys.A) == true)
             {
                 velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+                PlayerInputs.SetState();
+            }
+            else if (PlayerInputs.IsKeyReleased(Keys.A) == true)
+            {
+                velocity.X = 0;
+                PlayerInputs.SetState();
             }
             else if (PlayerInputs.IsPressed(Keys.Space) == true && _Jumping == false)
             {
                 position.Y -= +5f;
                 velocity.Y = -9f;
                 _Jumping = true;
+                PlayerInputs.SetState();
             }
         }
 
