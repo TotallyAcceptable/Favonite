@@ -20,6 +20,8 @@ namespace Favonite_Development
         private bool _Jumping , _onGround;
         public bool active, isHit;
         public int playerHealth, playerAttack, playerDefence;
+
+        private List<Bullets> bullets = new List<Bullets>();
   
 
         public int Width
@@ -41,12 +43,7 @@ namespace Favonite_Development
         {
 
         }
-        private void Velocity()
-        {
-            speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y);
-            normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed);
-            velocity = normalDirection * speed;
-        }
+
 
         #endregion
 
@@ -125,6 +122,26 @@ namespace Favonite_Development
             }
         }
 
+        private void shoot()
+        {
+            
+
+        }
+        private void UpdateBullets()
+        {
+            foreach(Bullets b in bullets)
+            {
+                b.position += b.velocity;
+                if (Vector2.Distance(b.position, position) > 600)
+                    b.isVisible = false;
+            }
+            for(int i =0; i< bullets.Count; i++)
+            {
+                if (!bullets[i].isVisible)
+                    bullets.RemoveAt(i);
+                i--;
+            }
+        }
         public void Collision(Rectangle newRectangle, int xOffset, int yOffset)
         {
             Rectangle boundingRectangle = new Rectangle((int)position.X, (int)position.Y, animation.frameWidth, animation.frameHeight);
@@ -154,8 +171,16 @@ namespace Favonite_Development
         public void Draw(SpriteBatch spriteBatch)
         {
             animation.Draw(spriteBatch);
+            
         }
 
+        #region TemporaryMethods
+        private void Velocity()
+        {
+            speed = MathF.Sqrt(velocity.X * velocity.X + velocity.Y * velocity.Y);
+            normalDirection = new Vector2(velocity.X / speed, velocity.Y / speed);
+            velocity = normalDirection * speed;
+        }
         private void temp()
         {
             #region Keys
@@ -234,4 +259,6 @@ namespace Favonite_Development
 
 
     }
+
+    #endregion
 }

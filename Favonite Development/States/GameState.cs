@@ -21,7 +21,7 @@ namespace Favonite_Development.States
         private Camera _camera = new Camera();
 
         private EnemyManager enemytype = new EnemyManager();
-        Texture2D playerTexture, enemyTexture;
+        Texture2D playerTexture, enemyTexture,healthBar;
         private Player player;
         float scale = 1f;
 
