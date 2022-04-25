@@ -113,7 +113,7 @@ namespace Favonite_Development
                 velocity.X = 0;
                 PlayerInputs.SetState();
             }
-            if (PlayerInputs.IsPressed(Keys.Space) == true && _Jumping == false)
+            if (PlayerInputs.IsPressed(Keys.W) == true && _Jumping == false)
             {
                 position.Y -= +5f;
                 velocity.Y = -9f;
