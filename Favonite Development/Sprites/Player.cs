@@ -135,7 +135,7 @@ namespace Favonite_Development
                 if (Vector2.Distance(b.position, position) > 600)
                     b.isVisible = false;
             }
-            for(int i =0; i< bullets.Count; i++)
+            for(int i = 0; i< bullets.Count; i++)
             {
                 if (!bullets[i].isVisible)
                     bullets.RemoveAt(i);

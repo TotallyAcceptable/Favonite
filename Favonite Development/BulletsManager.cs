@@ -21,11 +21,7 @@ namespace Favonite_Development
         GraphicsDeviceManager graphics;
         static Vector2 graphicsInfo;
 
-        KeyboardState currentKeyboardState;
-        KeyboardState previousKeyboardState;
 
-        GamePadState currentGamePadState;
-        GamePadState previousGamePadState;
 
         public void Initialize(Texture2D texture, GraphicsDevice Graphics)
         {
@@ -61,15 +57,14 @@ namespace Favonite_Development
 
         public void UpdateManagerBullets(GameTime gameTime, Player player)
         {
-            previousGamePadState = currentGamePadState;
-           
+            PlayerInputs.GetGamepadState();
             PlayerInputs.GetState();
-            currentGamePadState = GamePad.GetState(PlayerIndex.One);
 
-            if (PlayerInputs.IsPressed(Keys.Space) == true || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed)
+            if (PlayerInputs.IsPressed(Keys.Space) == true || PlayerInputs.GamepadIsPressed(Buttons.X) == true)
             {
                 ShootBullets(gameTime, player);
                 PlayerInputs.SetState();
+                PlayerInputs.SetGamepadState();
             }
 
             for (int i = 0; i < bullets.Count; i++)
@@ -80,7 +75,7 @@ namespace Favonite_Development
                     bullets.Remove(bullets[i]);
                 }
             }
-
+            
             foreach (Enemy e in EnemyManager.enemiesType1)
             {
                 Rectangle enemyRectangle = new Rectangle(

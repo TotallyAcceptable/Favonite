@@ -31,9 +31,19 @@ namespace Favonite_Development
             return currentKeyboardState.IsKeyDown(keys);
         }
 
+        public static bool GamepadIsPressed(Buttons buttons)
+        {
+            return currentGamePadState.IsButtonDown(buttons);
+        }
+
         public static bool IsKeyReleased(Keys keys)
         {
             return currentKeyboardState.IsKeyUp(keys) && oldKeyboardState.IsKeyDown(keys);
+        }
+
+        public static bool GamepadIsReleased(Buttons buttons)
+        {
+            return currentGamePadState.IsButtonUp(buttons) && oldGamePadState.IsButtonDown(buttons);
         }
 
         public static void SetState()
