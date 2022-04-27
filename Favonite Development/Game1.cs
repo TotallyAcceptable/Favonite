@@ -13,6 +13,8 @@ namespace Favonite_Development
         private SpriteBatch _spriteBatch;
         enum GameStates { TitleScreen, OpeningMenu, Playing, Credits }
         GameStates gameStates = GameStates.TitleScreen;
+        Texture2D bulletTexture;
+        BulletsManager Bullets = new BulletsManager();
 
         private State _currentState;
         private State _nextState;
@@ -32,7 +34,6 @@ namespace Favonite_Development
 
         protected override void Initialize()
         {   
-            // game window size dependant on global variable for screenwidth and height values
             _graphics.PreferredBackBufferWidth = Globals.screenWidth;
             _graphics.PreferredBackBufferHeight = Globals.screenHeight;
             _graphics.ApplyChanges();
@@ -42,11 +43,11 @@ namespace Favonite_Development
 
         protected override void LoadContent()
         {
-            // load in the game state and set the default value of the next state to null
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _currentState = new MenuState(this, _graphics.GraphicsDevice, Content, _spriteBatch);
             _currentState.LoadContent();
             _nextState = null;
+            bulletTexture = Content.Load<Texture2D>("bullet");
             // TODO: use this.Content to load your game content here
         }
 
@@ -62,8 +63,7 @@ namespace Favonite_Development
                 Exit();
             {
 
-            // this code block changes the games states.
-            // the current update method will be dependant on the current state
+// this code block changes the games states.
                 if (_nextState != null)
                 {
                     _currentState = _nextState;
@@ -75,7 +75,10 @@ namespace Favonite_Development
                 _currentState.Update(gameTime);
                 _currentState.PostUpdate(gameTime);
             }
-           
+
+            BulletsManager.UpdateManagerBullets(gameTime, Player);
+
+
 
             // TODO: Add your update logic here
 
@@ -87,6 +90,7 @@ namespace Favonite_Development
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // draws the current state of the game
+            Bullets.DrawBullets(_spriteBatch);
             _currentState.Draw(gameTime, _spriteBatch);
 
             // TODO: Add your drawing code here
