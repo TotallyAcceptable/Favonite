@@ -21,7 +21,7 @@ namespace Favonite_Development
         public bool active, isHit;
         public int playerHealth, playerAttack, playerDefence;
 
-        private List<Bullets> bullets = new List<Bullets>();
+        private List<Sprites.Bullets> bullets = new List<Sprites.Bullets>();
   
 
         public int Width
@@ -129,7 +129,7 @@ namespace Favonite_Development
         }
         private void UpdateBullets()
         {
-            foreach(Bullets b in bullets)
+            foreach(Sprites.Bullets b in bullets)
             {
                 b.position += b.velocity;
                 if (Vector2.Distance(b.position, position) > 600)
