@@ -14,7 +14,6 @@ namespace Favonite_Development
         enum GameStates { TitleScreen, OpeningMenu, Playing, Credits }
         GameStates gameStates = GameStates.TitleScreen;
         Texture2D bulletTexture;
-        BulletsManager Bullets = new BulletsManager();
 
         private State _currentState;
         private State _nextState;
@@ -76,7 +75,7 @@ namespace Favonite_Development
                 _currentState.PostUpdate(gameTime);
             }
 
-            BulletsManager.UpdateManagerBullets(gameTime, Player);
+
 
 
 
@@ -90,7 +89,6 @@ namespace Favonite_Development
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // draws the current state of the game
-            Bullets.DrawBullets(_spriteBatch);
             _currentState.Draw(gameTime, _spriteBatch);
 
             // TODO: Add your drawing code here

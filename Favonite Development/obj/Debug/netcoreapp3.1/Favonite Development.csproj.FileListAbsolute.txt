@@ -152,3 +152,4 @@ C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\obj\D
 C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.dll
 C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.pdb
 C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.genruntimeconfig.cache
+E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bullet.xnb

@@ -23,6 +23,7 @@ namespace Favonite_Development.States
         private Camera _camera = new Camera();
 
         private EnemyManager enemytype = new EnemyManager();
+        BulletsManager Bullets = new BulletsManager();
         Texture2D playerTexture, enemyTexture,healthBar;
         private Player player;
         float scale = 1f;
@@ -68,6 +69,7 @@ namespace Favonite_Development.States
             player.Initialize(playerAnimation);
             enemyTexture = _content.Load<Texture2D>("PlaceholderPlayer");
             enemytype.Initialize(enemyTexture, _details);
+            
         }
 
         public override void UnloadContent() {
@@ -82,6 +84,7 @@ namespace Favonite_Development.States
             foreach (CollisionTiles tiles in map.CollisionTiles)
                 player.Collision(tiles.Rectangle, map.Width, map.Height);
             enemytype.Update(gameTime, player);
+            Bullets.UpdateManagerBullets(gameTime, player);
 
         }
         public override void PostUpdate(GameTime gameTime)
@@ -94,6 +97,7 @@ namespace Favonite_Development.States
             _spriteBatch.Begin(transformMatrix: _camera.Transform); //localise view via camera
             map.Draw(_spriteBatch);
             player.Draw(_spriteBatch);
+            Bullets.DrawBullets(_spriteBatch);
             enemytype.Draw(_spriteBatch);
             _spriteBatch.End();
            

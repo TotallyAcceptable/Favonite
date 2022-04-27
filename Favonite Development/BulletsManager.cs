@@ -62,17 +62,17 @@ namespace Favonite_Development
         public void UpdateManagerBullets(GameTime gameTime, Player player)
         {
             previousGamePadState = currentGamePadState;
-            previousKeyboardState = currentKeyboardState;
-
+           
+            PlayerInputs.GetState();
             currentGamePadState = GamePad.GetState(PlayerIndex.One);
-            currentKeyboardState = Keyboard.GetState();
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Space) || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed)
+            if (PlayerInputs.IsPressed(Keys.Space) == true || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed)
             {
                 ShootBullets(gameTime, player);
+                PlayerInputs.SetState();
             }
 
-            for (var i = 0; i < bullets.Count; i++)
+            for (int i = 0; i < bullets.Count; i++)
             {
                 bullets[i].Update(gameTime);
                 if (!bullets[i].Active || bullets[i].Position.X > graphicsInfo.X)
