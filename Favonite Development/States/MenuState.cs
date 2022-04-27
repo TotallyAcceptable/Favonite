@@ -12,12 +12,15 @@ using Favonite_Development;
 
 namespace Favonite_Development.States
 {
-    public class MenuState :  State
+    public class MenuState :  State // child class of state
     {
+
         private List<Component> _components;
         private Texture2D menuBackgroundTexture, icon, titleName;
         private SpriteBatch _spriteBatch;
 
+        //constructor
+        //setting the buttons and button textures within the constructor
         public MenuState(Game1 game, GraphicsDevice graphicsDevice,ContentManager content, SpriteBatch spriteBatch) : base(game,graphicsDevice,content , spriteBatch)
         {
             _spriteBatch = spriteBatch;
@@ -61,6 +64,8 @@ namespace Favonite_Development.States
         {
 
         }
+
+        //load in the textures
         public override void LoadContent()
         {
             var buttonTexture = _content.Load<Texture2D>("Start Game");
@@ -76,6 +81,7 @@ namespace Favonite_Development.States
         }
 
 
+        //applies and updates the components with the correct functionality
         public override void Update(GameTime gameTime)
         {
             foreach (var component in _components)
@@ -94,11 +100,14 @@ namespace Favonite_Development.States
             spriteBatch.Draw(menuBackgroundTexture, new Vector2(0, 0), Color.White);
             spriteBatch.Draw(icon, new Vector2(860, 0), Color.White);
             spriteBatch.Draw(titleName, new Vector2(560, 200), Color.White);
+            //draw each button component
             foreach (var component in _components)
                 component.Draw(gameTime,spriteBatch);
             spriteBatch.End();
         }
 
+
+        //button component private methods
         private void LoadGameButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Load Game");

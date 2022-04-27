@@ -12,8 +12,10 @@ using Favonite_Development.Core;
 
 namespace Favonite_Development.States
 {
+    //game state class is used for the main game including levels enemies and player functionality instead of directly writing to the game1 class
     class GameState : State
     {
+        //declarations
         private Map map;
         private ContentManager _content;
         private GraphicsDevice _details;
@@ -42,6 +44,7 @@ namespace Favonite_Development.States
 
         public override void LoadContent()
         {
+            //load in the map
             map = new Map();
             Tiles.Content = _content;
             map.Generate(new int[,]{

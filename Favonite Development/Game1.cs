@@ -32,6 +32,7 @@ namespace Favonite_Development
 
         protected override void Initialize()
         {   
+            // game window size dependant on global variable for screenwidth and height values
             _graphics.PreferredBackBufferWidth = Globals.screenWidth;
             _graphics.PreferredBackBufferHeight = Globals.screenHeight;
             _graphics.ApplyChanges();
@@ -41,6 +42,7 @@ namespace Favonite_Development
 
         protected override void LoadContent()
         {
+            // load in the game state and set the default value of the next state to null
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _currentState = new MenuState(this, _graphics.GraphicsDevice, Content, _spriteBatch);
             _currentState.LoadContent();
@@ -60,7 +62,8 @@ namespace Favonite_Development
                 Exit();
             {
 
-// this code block changes the games states.
+            // this code block changes the games states.
+            // the current update method will be dependant on the current state
                 if (_nextState != null)
                 {
                     _currentState = _nextState;
@@ -83,7 +86,7 @@ namespace Favonite_Development
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-// draws the current state of the game
+            // draws the current state of the game
             _currentState.Draw(gameTime, _spriteBatch);
 
             // TODO: Add your drawing code here

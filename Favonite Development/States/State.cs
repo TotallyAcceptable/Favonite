@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Favonite_Development.States
 {
+    //abstract parent class state containing all the methods and declarations used for stateclasses 
     public abstract class State
     {
         protected Game1 _game;
