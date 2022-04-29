@@ -48,8 +48,8 @@ namespace Favonite_Development
             bulletsAnimation.Initialize(bulletsTexture, p.Position, 46, 16, 1, 30, Color.White, 1f, true);
             Bullets bullet = new Bullets();
             var bulletsPosition = p.position;
-            bulletsPosition.Y += 37;
-            bulletsPosition.X += 70;
+            bulletsPosition.Y += 20;
+            bulletsPosition.X += 5;
             bullet.Initialize(bulletsAnimation, bulletsPosition);
             bullets.Add(bullet);
             //bulletSoundInstance.Play();
