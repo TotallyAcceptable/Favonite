@@ -25,6 +25,7 @@ namespace Favonite_Development.States
         private EnemyManager enemytype = new EnemyManager();
         BulletsManager Bullets = new BulletsManager();
         Texture2D playerTexture, enemyTexture,healthBar;
+        Texture2D bulletsTexture;
         private Player player;
         float scale = 1f;
 
@@ -34,6 +35,7 @@ namespace Favonite_Development.States
             _details = graphicsDevice;
             _spriteBatch = spriteBatch;
             player = new Player(_content.Load<Texture2D>("utauDown"));
+
 
         }
 
@@ -69,7 +71,10 @@ namespace Favonite_Development.States
             player.Initialize(playerAnimation);
             enemyTexture = _content.Load<Texture2D>("PlaceholderPlayer");
             enemytype.Initialize(enemyTexture, _details);
-            
+            bulletsTexture = _content.Load<Texture2D>("bullet");
+            Bullets.Initialize(bulletsTexture, _details);
+
+
         }
 
         public override void UnloadContent() {
