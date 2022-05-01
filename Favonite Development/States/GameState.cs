@@ -29,6 +29,10 @@ namespace Favonite_Development.States
         private Player player;
         float scale = 1f;
 
+        private SpriteFont font;
+        private int score = 0;
+        KeyboardState oldState;
+
         public GameState(Game1 game, GraphicsDevice graphicsDevice,ContentManager content, SpriteBatch spriteBatch) : base(game, graphicsDevice,content, spriteBatch)
         {
             _content = content;
@@ -41,7 +45,7 @@ namespace Favonite_Development.States
 
         public override void Initialize()
         {
-
+            oldState = Keyboard.GetState();
         }
 
 
@@ -73,6 +77,7 @@ namespace Favonite_Development.States
             enemytype.Initialize(enemyTexture, _details);
             bulletsTexture = _content.Load<Texture2D>("bullet");
             Bullets.Initialize(bulletsTexture, _details);
+            font = _content.Load<SpriteFont>("Score");
 
 
         }
@@ -99,6 +104,10 @@ namespace Favonite_Development.States
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+            _spriteBatch.Begin();
+            _spriteBatch.DrawString(font, "Score: " + score, new Vector2(100, 100), Color.Black);
+            _spriteBatch.End();
+
             _spriteBatch.Begin(transformMatrix: _camera.Transform); //localise view via camera
             map.Draw(_spriteBatch);
             player.Draw(_spriteBatch);

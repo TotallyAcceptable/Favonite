@@ -13,7 +13,7 @@ namespace Favonite_Development
         private SpriteBatch _spriteBatch;
         enum GameStates { TitleScreen, OpeningMenu, Playing, Credits }
         GameStates gameStates = GameStates.TitleScreen;
-        Texture2D bulletTexture;
+
 
         private State _currentState;
         private State _nextState;
@@ -46,7 +46,6 @@ namespace Favonite_Development
             _currentState = new MenuState(this, _graphics.GraphicsDevice, Content, _spriteBatch);
             _currentState.LoadContent();
             _nextState = null;
-            bulletTexture = Content.Load<Texture2D>("bullet");
             // TODO: use this.Content to load your game content here
         }
 
