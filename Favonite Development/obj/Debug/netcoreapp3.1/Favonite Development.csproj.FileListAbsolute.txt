@@ -159,3 +159,6 @@ C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\D
 C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\jumpSound.xnb
 C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bulletSound.wma
 C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bulletSound.xnb
+C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\legend.xnb
+C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\lives.xnb
+C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Font.xnb

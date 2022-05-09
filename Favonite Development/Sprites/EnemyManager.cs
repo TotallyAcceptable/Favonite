@@ -21,7 +21,7 @@ namespace Favonite_Development
 
         #endregion
 
-        public static void UpdateCollision(Player player)
+        public static void UpdateCollision(Player player, GUI guiInfo)
         {
             Rectangle rect1, rect2;
 
@@ -37,6 +37,14 @@ namespace Favonite_Development
                     player.playerHealth -= enemiesType1[i].Damage;
                     enemiesType1[i].health = 0;
                     enemiesType1[i].active = false;
+                    guiInfo.PLAYERHP -= 25;
+                    if(guiInfo.PLAYERHP == 0 && guiInfo.LIVES > 0)
+                    {
+                        player.active = false;
+                        guiInfo.LIVES -= 1;
+                        guiInfo.PLAYERHP = 100;
+                    }
+                    
 
                     if (player.playerHealth <= 0)
                         player.active = false;
@@ -67,7 +75,7 @@ namespace Favonite_Development
 
         }
 
-        public void Update(GameTime gameTime, Player player)
+        public void Update(GameTime gameTime, Player player, GUI guiInfo)
         {
             if (gameTime.TotalGameTime - previousSpawnTime > enemySpawnTime)
             {
@@ -75,7 +83,7 @@ namespace Favonite_Development
                 AddEnemy();
             }
 
-            UpdateCollision(player);
+            UpdateCollision(player, guiInfo);
 
             for (int i = (enemiesType1.Count - 1); i >= 0; i--)
             {

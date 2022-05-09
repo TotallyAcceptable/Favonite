@@ -9,10 +9,12 @@
     <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/Controls.png</File>
     <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/Exit Game.png</File>
     <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/FavoniteIcon.png</File>
+    <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/Font.spritefont</File>
     <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/jumpSound.mp3</File>
+    <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/legend.png</File>
+    <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/lives.png</File>
     <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/Main Menu Background.png</File>
     <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/pixil-frame-0.png</File>
-    <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/Score.spritefont</File>
     <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/Settings.png</File>
     <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/Start Game.png</File>
     <File>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/TileMapTiles/Tile1.png</File>
@@ -31,9 +33,11 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>MainMenuBackground.png</File>
     <File>PlaceholderPlayer.png</File>
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

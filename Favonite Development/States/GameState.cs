@@ -31,14 +31,18 @@ namespace Favonite_Development.States
         private Player player;
         float scale = 1f;
 
+        Texture2D legend;
+        Texture2D playerGUI;
+        GUI guiInfo = new GUI();
         private SpriteFont font;
-        private int score = 0;
         KeyboardState oldState;
 
         private SoundEffect jumpSound;
         private SoundEffect bulletSound;
         private Song gameMusic;
         public Sounds SND = new Sounds();
+
+
 
         public GameState(Game1 game, GraphicsDevice graphicsDevice,ContentManager content, SpriteBatch spriteBatch) : base(game, graphicsDevice,content, spriteBatch)
         {
@@ -84,7 +88,10 @@ namespace Favonite_Development.States
             enemytype.Initialize(enemyTexture, _details);
             bulletsTexture = _content.Load<Texture2D>("bullet");
             Bullets.Initialize(bulletsTexture, _details);
-            font = _content.Load<SpriteFont>("Score");
+            legend = _content.Load<Texture2D>("legend");
+            playerGUI = _content.Load<Texture2D>("lives");
+            guiInfo.Initialize(0, 100, 3, 1);
+            font = _content.Load<SpriteFont>("Font");
 
             jumpSound = _content.Load<SoundEffect>("jumpSound");
             bulletSound = _content.Load<SoundEffect>("bulletSound");
@@ -105,7 +112,7 @@ namespace Favonite_Development.States
             player.Update(gameTime, SND);
             foreach (CollisionTiles tiles in map.CollisionTiles)
                 player.Collision(tiles.Rectangle, map.Width, map.Height);
-            enemytype.Update(gameTime, player);
+            enemytype.Update(gameTime, player, guiInfo);
             Bullets.UpdateManagerBullets(gameTime, player, SND);
 
         }
@@ -117,7 +124,16 @@ namespace Favonite_Development.States
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             _spriteBatch.Begin();
-            _spriteBatch.DrawString(font, "Score: " + score, new Vector2(100, 100), Color.Black);
+            //_spriteBatch.DrawString(font, "Score: " + score, new Vector2(100, 100), Color.Black);
+            _spriteBatch.Draw(legend, new Vector2(0, 0), Color.White);
+            _spriteBatch.DrawString(font, "Score: " + guiInfo.SCORE, new Vector2(5, 2), Color.White);
+            _spriteBatch.DrawString(font, "Level: " + guiInfo.LEVEL, new Vector2(5, 32), Color.White);
+            _spriteBatch.DrawString(font, "HP: " + guiInfo.PLAYERHP, new Vector2(5, 65), Color.White);
+            for(int i = 0; i <= guiInfo.LIVES; i++)
+            {
+                _spriteBatch.Draw(playerGUI, new Vector2(300 + i * 80, 5), Color.White);
+            }
+
             _spriteBatch.End();
 
             _spriteBatch.Begin(transformMatrix: _camera.Transform); //localise view via camera
