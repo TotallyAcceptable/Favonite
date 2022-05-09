@@ -32,12 +32,13 @@ namespace Favonite_Development
             graphicsInfo.Y = Graphics.Viewport.Height;
         }
 
-        public static void ShootBullets(GameTime gameTime, Player p)
+        public static void ShootBullets(GameTime gameTime, Player p, Sounds SND)
         {
             if (gameTime.TotalGameTime - previousBulletsSpawnTime > bulletsSpawnTime)
             {
                 previousBulletsSpawnTime = gameTime.TotalGameTime;
                 AddBullets(p);
+                SND.SHOOT.Play();
             }
 
         }
@@ -55,14 +56,15 @@ namespace Favonite_Development
             //bulletSoundInstance.Play();
         }
 
-        public void UpdateManagerBullets(GameTime gameTime, Player player)
+        public void UpdateManagerBullets(GameTime gameTime, Player player, Sounds SND)
         {
             PlayerInputs.GetGamepadState();
             PlayerInputs.GetState();
 
             if (PlayerInputs.IsPressed(Keys.Space) == true || PlayerInputs.GamepadIsPressed(Buttons.X) == true)
             {
-                ShootBullets(gameTime, player);
+                ShootBullets(gameTime, player, SND);
+                
                 PlayerInputs.SetState();
                 PlayerInputs.SetGamepadState();
             }

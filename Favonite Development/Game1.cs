@@ -35,7 +35,7 @@ namespace Favonite_Development
         {   
             _graphics.PreferredBackBufferWidth = Globals.screenWidth;
             _graphics.PreferredBackBufferHeight = Globals.screenHeight;
-            _graphics.ApplyChanges();
+            _graphics.ApplyChanges(); 
 
             base.Initialize();
         }

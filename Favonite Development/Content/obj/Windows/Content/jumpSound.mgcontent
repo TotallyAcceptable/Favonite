@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/jumpSound.mp3</SourceFile>
+  <SourceTime>2022-05-09T16:41:57.4447997+01:00</SourceTime>
+  <DestFile>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/bin/Windows/Content/jumpSound.xnb</DestFile>
+  <DestTime>2022-05-09T16:42:12.2035521+01:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2020-08-10T17:17:54+01:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2020-08-10T17:17:54+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

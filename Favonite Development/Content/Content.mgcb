@@ -25,6 +25,12 @@
 /processorParam:TextureFormat=Color
 /build:bullet.png
 
+#begin bulletSound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:bulletSound.mp3
+
 #begin Controls.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -60,6 +66,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:FavoniteIcon.png
+
+#begin jumpSound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:jumpSound.mp3
 
 #begin Main Menu Background.png
 /importer:TextureImporter

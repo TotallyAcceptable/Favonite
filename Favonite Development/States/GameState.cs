@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Content;
 using Favonite_Development.Controls;
 using System.ComponentModel;
 using Favonite_Development.Core;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 namespace Favonite_Development.States
 {
@@ -32,6 +34,11 @@ namespace Favonite_Development.States
         private SpriteFont font;
         private int score = 0;
         KeyboardState oldState;
+
+        private SoundEffect jumpSound;
+        private SoundEffect bulletSound;
+        private Song gameMusic;
+        public Sounds SND = new Sounds();
 
         public GameState(Game1 game, GraphicsDevice graphicsDevice,ContentManager content, SpriteBatch spriteBatch) : base(game, graphicsDevice,content, spriteBatch)
         {
@@ -79,6 +86,11 @@ namespace Favonite_Development.States
             Bullets.Initialize(bulletsTexture, _details);
             font = _content.Load<SpriteFont>("Score");
 
+            jumpSound = _content.Load<SoundEffect>("jumpSound");
+            bulletSound = _content.Load<SoundEffect>("bulletSound");
+            SND.Initialize(jumpSound,bulletSound);
+
+
 
         }
 
@@ -90,11 +102,11 @@ namespace Favonite_Development.States
         public override void Update(GameTime gameTime)
         {
             _camera.Follow(player);
-            player.Update(gameTime);
+            player.Update(gameTime, SND);
             foreach (CollisionTiles tiles in map.CollisionTiles)
                 player.Collision(tiles.Rectangle, map.Width, map.Height);
             enemytype.Update(gameTime, player);
-            Bullets.UpdateManagerBullets(gameTime, player);
+            Bullets.UpdateManagerBullets(gameTime, player, SND);
 
         }
         public override void PostUpdate(GameTime gameTime)

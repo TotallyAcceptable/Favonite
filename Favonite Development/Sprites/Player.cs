@@ -22,7 +22,9 @@ namespace Favonite_Development
         public int playerHealth, playerAttack, playerDefence;
 
         private List<Sprites.Bullets> bullets = new List<Sprites.Bullets>();
+
   
+
 
         public int Width
         {
@@ -59,14 +61,15 @@ namespace Favonite_Development
             playerHealth = 100;
             boundingRectangle = Rectangle.Empty;
             _onGround = true;
+
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Sounds SND)
         {
             position += velocity;
             //Rectangle boundingRectangle = new Rectangle((int)position.X, (int)position.Y, animation.frameWidth, animation.frameHeight);
             PlayerInputs.GetState();
-            Input(gameTime);
+            Input(gameTime, SND);
 
             #region animation
             animation.position = position;
@@ -89,7 +92,7 @@ namespace Favonite_Development
             }
         }
 
-        private void Input(GameTime gameTime)
+        private void Input(GameTime gameTime, Sounds SND)
         {
             PlayerInputs.GetState();
 
@@ -118,7 +121,10 @@ namespace Favonite_Development
                 position.Y -= +5f;
                 velocity.Y = -9f;
                 _Jumping = true;
+                SND.JUMP.Play();
                 PlayerInputs.SetState();
+
+
             }
         }
 

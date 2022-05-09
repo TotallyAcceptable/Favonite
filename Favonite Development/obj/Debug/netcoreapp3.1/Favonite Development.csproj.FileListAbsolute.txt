@@ -155,3 +155,7 @@ C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\obj\D
 E:\Uni Work\Games Development Project\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bullet.xnb
 C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bullet.xnb
 C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Score.xnb
+C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\jumpSound.wma
+C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\jumpSound.xnb
+C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bulletSound.wma
+C:\Users\w1828502\Documents\GitHub\favonite2\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bulletSound.xnb
