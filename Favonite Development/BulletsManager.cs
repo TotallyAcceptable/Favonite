@@ -56,7 +56,7 @@ namespace Favonite_Development
             //bulletSoundInstance.Play();
         }
 
-        public void UpdateManagerBullets(GameTime gameTime, Player player, Sounds SND)
+        public void UpdateManagerBullets(GameTime gameTime, Player player, Sounds SND, GUI guiInfo)
         {
             PlayerInputs.GetGamepadState();
             PlayerInputs.GetState();
@@ -103,10 +103,12 @@ namespace Favonite_Development
                         e.health = 0;
 
                         //record the kills
+                    
+                        guiInfo.SCORE = guiInfo.SCORE + 10;
 
                         B.Active = false;
 
-                        //record your score
+                            //record your score
                     }
                 }
             }

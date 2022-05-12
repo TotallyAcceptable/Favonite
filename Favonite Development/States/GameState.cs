@@ -113,7 +113,8 @@ namespace Favonite_Development.States
             foreach (CollisionTiles tiles in map.CollisionTiles)
                 player.Collision(tiles.Rectangle, map.Width, map.Height);
             enemytype.Update(gameTime, player, guiInfo);
-            Bullets.UpdateManagerBullets(gameTime, player, SND);
+            Bullets.UpdateManagerBullets(gameTime, player, SND, guiInfo);
+
 
         }
         public override void PostUpdate(GameTime gameTime)

@@ -37,6 +37,7 @@ namespace Favonite_Development
                     player.playerHealth -= enemiesType1[i].Damage;
                     enemiesType1[i].health = 0;
                     enemiesType1[i].active = false;
+                    guiInfo.SCORE = guiInfo.SCORE + 10;
                     guiInfo.PLAYERHP -= 25;
                     if(guiInfo.PLAYERHP == 0 && guiInfo.LIVES > 0)
                     {
