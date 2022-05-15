@@ -115,6 +115,12 @@ namespace Favonite_Development.States
             enemytype.Update(gameTime, player, guiInfo);
             Bullets.UpdateManagerBullets(gameTime, player, SND, guiInfo);
 
+            if(guiInfo.SCORE >= guiInfo.LEVELUPGRADE)
+            {
+                guiInfo.LEVELUPGRADE = guiInfo.SCORE + 50;
+                guiInfo.LEVEL += 1;
+            }
+
 
         }
         public override void PostUpdate(GameTime gameTime)

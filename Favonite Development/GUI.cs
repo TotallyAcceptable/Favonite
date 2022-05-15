@@ -10,6 +10,7 @@ namespace Favonite_Development
         private int playerhp;
         private int lives;
         private int gameLevel;
+        private int levelUpgrade;
 
         public void Initialize(int Score, int HP, int Lives, int Level)
         {
@@ -17,6 +18,7 @@ namespace Favonite_Development
             playerhp = HP;
             lives = Lives;
             gameLevel = Level;
+            levelUpgrade = 100;
 
         }
 
@@ -42,6 +44,12 @@ namespace Favonite_Development
         {
             get { return gameLevel; }
             set { this.gameLevel = value; }
+        }
+
+        public int LEVELUPGRADE
+        {
+            get { return levelUpgrade; }
+            set { this.levelUpgrade = value; }
         }
 
     }
