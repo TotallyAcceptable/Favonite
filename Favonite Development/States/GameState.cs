@@ -31,6 +31,8 @@ namespace Favonite_Development.States
         private Player player;
         float scale = 1f;
 
+        Texture2D rightWalk, leftWalk, currentAnim;
+
         Texture2D legend;
         Texture2D playerGUI;
         GUI guiInfo = new GUI();
@@ -51,7 +53,7 @@ namespace Favonite_Development.States
             _content = content;
             _details = graphicsDevice;
             _spriteBatch = spriteBatch;
-            player = new Player(_content.Load<Texture2D>("utauDown"));
+            player = new Player(_content.Load<Texture2D>("ReiGunRunning"));
 
 
         }
@@ -91,8 +93,8 @@ namespace Favonite_Development.States
 
             _backgroundTexture = _content.Load<Texture2D>("brickBackground");
             Animation playerAnimation = new Animation();
-            playerTexture = _content.Load<Texture2D>("utauDown");
-            playerAnimation.Initialize(playerTexture, player.position, 32, 48, 4, 120, Color.White, scale, true);
+            playerTexture = _content.Load<Texture2D>("ReiGunRunning");
+            playerAnimation.Initialize(playerTexture, player.position, 48, 62, 1, 120, Color.White, scale, true);
             player.Initialize(playerAnimation);
             enemyTexture = _content.Load<Texture2D>("PlaceholderPlayer");
             enemytype.Initialize(enemyTexture, _details);
@@ -106,8 +108,6 @@ namespace Favonite_Development.States
             jumpSound = _content.Load<SoundEffect>("jumpSound");
             bulletSound = _content.Load<SoundEffect>("bulletSound");
             SND.Initialize(jumpSound,bulletSound);
-
-
 
         }
 
