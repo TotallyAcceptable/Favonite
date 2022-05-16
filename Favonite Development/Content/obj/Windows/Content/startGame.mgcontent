@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Rusty/Documents/GitHub/Favonite/Favonite Development/Content/utauRight.png</SourceFile>
-  <SourceTime>2022-05-15T23:30:06.9185651+01:00</SourceTime>
-  <DestFile>C:/Users/Rusty/Documents/GitHub/Favonite/Favonite Development/Content/bin/Windows/Content/utauRight.xnb</DestFile>
-  <DestTime>2022-05-15T23:31:43.5475034+01:00</DestTime>
+  <SourceFile>C:/Users/Rusty/Documents/GitHub/Favonite/Favonite Development/Content/startGame.png</SourceFile>
+  <SourceTime>2022-05-16T01:10:01.2471176+01:00</SourceTime>
+  <DestFile>C:/Users/Rusty/Documents/GitHub/Favonite/Favonite Development/Content/bin/Windows/Content/startGame.xnb</DestFile>
+  <DestTime>2022-05-16T01:20:01.9830878+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T17:17:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

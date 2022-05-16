@@ -25,11 +25,11 @@ namespace Favonite_Development.States
         {
             _spriteBatch = spriteBatch;
 
-            var buttonTexture = _content.Load<Texture2D>("Start Game");
+            var buttonTexture = _content.Load<Texture2D>("startGame");
 
             var newGameButton = new Button(buttonTexture)
             {
-                Position = new Vector2(960, 700),
+                Position = new Vector2(960, 600),
                 
             };
 
@@ -37,7 +37,7 @@ namespace Favonite_Development.States
 
             var loadGameButton = new Button(buttonTexture)
             {
-                Position = new Vector2(960, 800),
+                Position = new Vector2(960, 775),
                 Text = "Load Game",
             };
 
@@ -45,7 +45,7 @@ namespace Favonite_Development.States
 
             var quitGameButton = new Button(buttonTexture)
             {
-                Position = new Vector2(960, 900),
+                Position = new Vector2(960, 950),
                 Text = "Quit Game",
             };
 
@@ -68,7 +68,7 @@ namespace Favonite_Development.States
         //load in the textures
         public override void LoadContent()
         {
-            var buttonTexture = _content.Load<Texture2D>("Start Game");
+            var buttonTexture = _content.Load<Texture2D>("startGame");
             menuBackgroundTexture = _content.Load<Texture2D>("Main Menu Background");
             icon = _content.Load<Texture2D>("FavoniteIcon");
             titleName = _content.Load<Texture2D>("Title name");

@@ -286,3 +286,66 @@ C:\Users\w1828502\Documents\GitHub\favonite3\Favonite Development\obj\Debug\netc
 C:\Users\w1828502\Documents\GitHub\favonite3\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.csproj.CoreCompileInputs.cache
 C:\Users\w1828502\Documents\GitHub\favonite3\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.csproj.CopyComplete
 C:\Users\w1828502\Documents\GitHub\favonite3\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.genruntimeconfig.cache
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bulletSound.wma
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\jumpSound.wma
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Main Menu Background.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Score.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bullet.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\bulletSound.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Controls.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Exit Game.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\FavoniteIcon.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Font.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\jumpSound.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\legend.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\lives.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\MainMenuBackground.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\PlaceholderPlayer.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Settings.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Start Game.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\TileMapTiles\Tile1.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\TileMapTiles\Tile2.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\TileMapTiles\Tile3.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\Title name.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauDown.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauLeft.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauRight.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\utauUp.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.exe
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.deps.json
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.runtimeconfig.json
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.runtimeconfig.dev.json
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Favonite Development.pdb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Microsoft.VisualBasic.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.Direct2D1.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.Direct3D11.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.Direct3D9.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.DXGI.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.Mathematics.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.MediaFoundation.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.XAudio2.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\SharpDX.XInput.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\debian-x64\native\libuv.so
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\fedora-x64\native\libuv.so
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\opensuse-x64\native\libuv.so
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\osx\native\libuv.dylib
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\rhel-x64\native\libuv.so
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\win7-arm\native\libuv.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\libuv.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\libuv.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.csproj.AssemblyReference.cache
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.AssemblyInfoInputs.cache
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.AssemblyInfo.cs
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.csproj.CoreCompileInputs.cache
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.csproj.CopyComplete
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.dll
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.pdb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.genruntimeconfig.cache
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\startGame.xnb
