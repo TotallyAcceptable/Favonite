@@ -37,6 +37,8 @@ namespace Favonite_Development.States
         private SpriteFont font;
         KeyboardState oldState;
 
+        private Texture2D _backgroundTexture;
+
         private SoundEffect jumpSound;
         private SoundEffect bulletSound;
         private Song gameMusic;
@@ -66,20 +68,28 @@ namespace Favonite_Development.States
             map = new Map();
             Tiles.Content = _content;
             map.Generate(new int[,]{
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-                {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3 },
-                {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3 },
-                {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3 },
-                {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2 },
-                {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3 },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-                {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2 },
-                {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },
+                {0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },
+                {0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },
+                {0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },
+                {1,1,1,1,1,1,1,1,0,0,0,1,0,0,0,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1 },
+                {1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,0,1 },
+                {1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,0,1 },
+                {1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,0,1 },
+                {1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,0,1 },
+                {1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,0,1 },
+                {1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1 },
+                {1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1 },
+                {1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1 },
+                {1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1 },
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1 },
+                {1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },
+                {1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },
+                {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },
 
 
             },64);
+
+            _backgroundTexture = _content.Load<Texture2D>("brickBackground");
             Animation playerAnimation = new Animation();
             playerTexture = _content.Load<Texture2D>("utauDown");
             playerAnimation.Initialize(playerTexture, player.position, 32, 48, 4, 120, Color.White, scale, true);
@@ -130,26 +140,26 @@ namespace Favonite_Development.States
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+            _spriteBatch.Begin(transformMatrix: _camera.Transform); //localise view via camera
+            _spriteBatch.Draw(_backgroundTexture, new Vector2(0, 0), Color.White);
+            map.Draw(_spriteBatch);
+            player.Draw(_spriteBatch);
+            Bullets.DrawBullets(_spriteBatch);
+            enemytype.Draw(_spriteBatch);
+            _spriteBatch.End();
+
             _spriteBatch.Begin();
             //_spriteBatch.DrawString(font, "Score: " + score, new Vector2(100, 100), Color.Black);
             _spriteBatch.Draw(legend, new Vector2(0, 0), Color.White);
             _spriteBatch.DrawString(font, "Score: " + guiInfo.SCORE, new Vector2(5, 2), Color.White);
             _spriteBatch.DrawString(font, "Level: " + guiInfo.LEVEL, new Vector2(5, 32), Color.White);
             _spriteBatch.DrawString(font, "HP: " + guiInfo.PLAYERHP, new Vector2(5, 65), Color.White);
-            for(int i = 0; i <= guiInfo.LIVES; i++)
+            for (int i = 0; i <= guiInfo.LIVES; i++)
             {
                 _spriteBatch.Draw(playerGUI, new Vector2(300 + i * 80, 5), Color.White);
             }
 
             _spriteBatch.End();
-
-            _spriteBatch.Begin(transformMatrix: _camera.Transform); //localise view via camera
-            map.Draw(_spriteBatch);
-            player.Draw(_spriteBatch);
-            Bullets.DrawBullets(_spriteBatch);
-            enemytype.Draw(_spriteBatch);
-            _spriteBatch.End();
-           
 
         }
     }

@@ -349,3 +349,4 @@ C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcorea
 C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.pdb
 C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.genruntimeconfig.cache
 C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\startGame.xnb
+C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\brickBackground.xnb
