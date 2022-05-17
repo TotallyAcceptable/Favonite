@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<<<<<<< HEAD
   <SourceFile>C:/Users/Rusty/Documents/GitHub/Favonite/Favonite Development/Content/../../../../../Downloads/Assets/Tile1.png</SourceFile>
   <SourceTime>2022-05-14T17:11:20.5354962+01:00</SourceTime>
   <DestFile>C:/Users/Rusty/Documents/GitHub/Favonite/Favonite Development/Content/bin/Windows/Content/TileMapTiles/Tile1.xnb</DestFile>
   <DestTime>2022-05-16T01:46:40.4537474+01:00</DestTime>
+=======
+  <SourceFile>C:/Users/Leilani/Documents/GitHub/Favonite/Favonite Development/Content/TileMapTiles/Tile1.png</SourceFile>
+  <SourceTime>2022-05-02T12:35:43.1469908+01:00</SourceTime>
+  <DestFile>C:/Users/Leilani/Documents/GitHub/Favonite/Favonite Development/Content/bin/Windows/Content/TileMapTiles/Tile1.xnb</DestFile>
+  <DestTime>2022-05-12T21:41:32.4154912+01:00</DestTime>
+>>>>>>> parent of e3f65cb (level upgrade)
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T17:17:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

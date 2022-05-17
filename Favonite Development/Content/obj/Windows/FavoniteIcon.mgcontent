@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/w1828502/Documents/GitHub/favonite3/Favonite Development/Content/FavoniteIcon.png</SourceFile>
-  <SourceTime>2022-05-15T22:20:51.9213345+01:00</SourceTime>
-  <DestFile>C:/Users/w1828502/Documents/GitHub/favonite3/Favonite Development/Content/bin/Windows/FavoniteIcon.xnb</DestFile>
-  <DestTime>2022-05-15T22:24:35.9387203+01:00</DestTime>
+  <SourceFile>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/FavoniteIcon.png</SourceFile>
+  <SourceTime>2022-04-27T15:01:49.9544603+01:00</SourceTime>
+  <DestFile>C:/Users/w1828502/Documents/GitHub/favonite2/Favonite/Favonite Development/Content/bin/Windows/FavoniteIcon.xnb</DestFile>
+  <DestTime>2022-05-09T18:31:10.392958+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T17:17:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<<<<<<< HEAD
   <SourceFile>C:/Users/Rusty/Documents/GitHub/Favonite/Favonite Development/Content/jumpSound.mp3</SourceFile>
   <SourceTime>2022-05-15T23:30:06.8452857+01:00</SourceTime>
   <DestFile>C:/Users/Rusty/Documents/GitHub/Favonite/Favonite Development/Content/bin/Windows/Content/jumpSound.xnb</DestFile>
   <DestTime>2022-05-15T23:31:42.2449187+01:00</DestTime>
+=======
+  <SourceFile>C:/Users/Leilani/Documents/GitHub/Favonite/Favonite Development/Content/jumpSound.mp3</SourceFile>
+  <SourceTime>2022-05-11T09:36:05.8255533+01:00</SourceTime>
+  <DestFile>C:/Users/Leilani/Documents/GitHub/Favonite/Favonite Development/Content/bin/Windows/Content/jumpSound.xnb</DestFile>
+  <DestTime>2022-05-12T21:41:31.4472761+01:00</DestTime>
+>>>>>>> parent of e3f65cb (level upgrade)
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2020-08-10T17:17:54+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

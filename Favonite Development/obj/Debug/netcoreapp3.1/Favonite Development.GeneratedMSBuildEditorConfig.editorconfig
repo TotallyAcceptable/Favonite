@@ -6,4 +6,8 @@ build_property.ApplicationHighDpiMode =
 build_property.ApplicationUseCompatibleTextRendering = 
 build_property.ApplicationVisualStyles = 
 build_property.RootNamespace = Favonite_Development
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\
+=======
+build_property.ProjectDir = C:\Users\Leilani\Documents\GitHub\Favonite\Favonite Development\
+>>>>>>> parent of e3f65cb (level upgrade)

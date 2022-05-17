@@ -224,6 +224,7 @@ C:\Users\Leilani\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcor
 C:\Users\Leilani\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.dll
 C:\Users\Leilani\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.pdb
 C:\Users\Leilani\Documents\GitHub\Favonite\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\Users\w1828502\Documents\GitHub\favonite3\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.dll
 C:\Users\w1828502\Documents\GitHub\favonite3\Favonite Development\obj\Debug\netcoreapp3.1\Favonite Development.pdb
 C:\Users\w1828502\Documents\GitHub\favonite3\Favonite Development\bin\Debug\netcoreapp3.1\Content\bulletSound.wma
@@ -352,3 +353,5 @@ C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcorea
 C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\brickBackground.xnb
 C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\ReiGunRunning.xnb
 C:\Users\Rusty\Documents\GitHub\Favonite\Favonite Development\bin\Debug\netcoreapp3.1\Content\rei_running.xnb
+=======
+>>>>>>> parent of e3f65cb (level upgrade)

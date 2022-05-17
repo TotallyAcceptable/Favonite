@@ -1,11 +1,17 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\Rusty\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\Rusty\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
       "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+=======
+      "C:\\Users\\Leilani\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Leilani\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+>>>>>>> parent of e3f65cb (level upgrade)
     ]
   }
 }
